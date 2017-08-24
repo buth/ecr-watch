@@ -103,7 +103,7 @@ func main() {
 			}
 		}
 
-		if !mostRecentImagePushedAt.IsZero() {
+		if !mostRecentImagePushedAt.IsZero() && currentMostRecentImagePushedAt.After(mostRecentImagePushedAt) {
 			logger.Println("exiting")
 			fmt.Print(strings.Join(currentMostRecentImageTags, ","))
 			return
